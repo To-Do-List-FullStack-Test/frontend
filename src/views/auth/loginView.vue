@@ -22,7 +22,7 @@
           <span v-if="errors.email" class="error-message">{{ errors.email }}</span>
         </div>
 
-        <!-- Mot de passe -->
+        <!-- Password -->
         <div class="form-group">
           <label for="password" class="form-label">Password</label>
           <div class="password-input-container">
@@ -32,7 +32,7 @@
               :type="showPassword ? 'text' : 'password'"
               class="form-input"
               :class="{ 'error': errors.password }"
-              placeholder="Votre mot de passe"
+              placeholder="Your password"
               required
             />
             <button
@@ -46,7 +46,7 @@
           <span v-if="errors.password" class="error-message">{{ errors.password }}</span>
         </div>
 
-        <!-- Message d'erreur global -->
+        <!-- Global error message -->
         <div v-if="authStore.error" class="error-banner">
           <i class="fas fa-exclamation-triangle"></i>
           {{ authStore.error }}
@@ -60,7 +60,7 @@
         >
           <i v-if="authStore.isLoading" class="fas fa-spinner fa-spin"></i>
           <i v-else class="fas fa-sign-in-alt"></i>
-          {{ authStore.isLoading ? 'login...' : 'Sign in' }}
+          {{ authStore.isLoading ? 'Signing in...' : 'Sign in' }}
         </button>
 
         <!-- Lien vers l'inscription -->

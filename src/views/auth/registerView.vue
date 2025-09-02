@@ -7,7 +7,7 @@
       </div>
 
       <form @submit.prevent="handleRegister" class="register-form">
-        <!-- Nom complet -->
+        <!-- Full Name -->
         <div class="form-group">
           <label for="full_name" class="form-label">Full Name</label>
           <input
@@ -37,7 +37,7 @@
           <span v-if="errors.email" class="error-message">{{ errors.email }}</span>
         </div>
 
-        <!-- Numéro de téléphone -->
+        <!-- Phone Number -->
         <div class="form-group">
           <label for="phone_number" class="form-label">phone number</label>
           <input
@@ -51,7 +51,7 @@
           <span v-if="errors.phone_number" class="error-message">{{ errors.phone_number }}</span>
         </div>
 
-        <!-- Adresse -->
+        <!-- Address -->
         <div class="form-group">
           <label for="address" class="form-label">address</label>
           <textarea
@@ -59,13 +59,13 @@
             v-model="form.address"
             class="form-textarea"
             :class="{ 'error': errors.address }"
-            placeholder="Votre adresse complète"
+            placeholder="Your complete address"
             rows="3"
           ></textarea>
           <span v-if="errors.address" class="error-message">{{ errors.address }}</span>
         </div>
 
-        <!-- Image de profil -->
+        <!-- Profile Image -->
         <div class="form-group">
           <label for="image" class="form-label">Image</label>
           <div class="file-input-container">
@@ -85,7 +85,7 @@
           <span v-if="errors.image" class="error-message">{{ errors.image }}</span>
         </div>
 
-        <!-- Mot de passe -->
+        <!-- Password -->
         <div class="form-group">
           <label for="password" class="form-label">password</label>
           <div class="password-input-container">
@@ -109,7 +109,7 @@
           <span v-if="errors.password" class="error-message">{{ errors.password }}</span>
         </div>
 
-        <!-- Confirmation du mot de passe -->
+        <!-- Password Confirmation -->
         <div class="form-group">
           <label for="password_confirmation" class="form-label">password confirmation</label>
           <input
@@ -118,19 +118,19 @@
             type="password"
             class="form-input"
             :class="{ 'error': errors.password_confirmation }"
-            placeholder="Confirmez votre mot de passe"
+            placeholder="Confirm your password"
             required
           />
           <span v-if="errors.password_confirmation" class="error-message">{{ errors.password_confirmation }}</span>
         </div>
 
-        <!-- Message d'erreur global -->
+        <!-- Global error message -->
         <div v-if="authStore.error" class="error-banner">
           <i class="fas fa-exclamation-triangle"></i>
           {{ authStore.error }}
         </div>
 
-        <!-- Bouton d'inscription -->
+        <!-- Register button -->
         <button
           type="submit"
           class="register-button"
@@ -138,10 +138,10 @@
         >
           <i v-if="authStore.isLoading" class="fas fa-spinner fa-spin"></i>
           <i v-else class="fas fa-user-plus"></i>
-          {{ authStore.isLoading ? 'creating...' : 'Sinup' }}
+          {{ authStore.isLoading ? 'Creating account...' : 'Sign up' }}
         </button>
 
-        <!-- Lien vers la connexion -->
+        <!-- Login link -->
         <div class="register-footer">
           <p>
             You have already an account ?
@@ -161,10 +161,10 @@ import { useRouter } from 'vue-router'
 import { useAuthStore } from '@/stores/auth'
 
 /**
- * Vue d'inscription
+ * Registration View
  *
- * Permet à un nouvel utilisateur de créer un compte
- * avec tous les champs requis selon le cahier des charges
+ * Allows a new user to create an account
+ * with all required fields according to specifications
  */
 
 const router = useRouter()

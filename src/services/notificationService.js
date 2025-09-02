@@ -13,7 +13,7 @@ class NotificationService {
     } catch (error) {
       return {
         success: false,
-        error: error.response?.data?.message || 'Error retreiving notifications'
+        error: error.response?.data?.message || 'Error retrieving notifications'
       }
     }
   }
@@ -29,7 +29,7 @@ class NotificationService {
     } catch (error) {
       return {
         success: false,
-        error: error.response?.data?.message || 'Error retreivng couters'
+        error: error.response?.data?.message || 'Error retrieving counters'
       }
     }
   }
@@ -45,7 +45,7 @@ class NotificationService {
     } catch (error) {
       return {
         success: false,
-        error: error.response?.data?.message || 'Error mark notification'
+        error: error.response?.data?.message || 'Error marking notification as read'
       }
     }
   }
@@ -61,7 +61,7 @@ class NotificationService {
     } catch (error) {
       return {
         success: false,
-        error: error.response?.data?.message || 'Error mark all notifications'
+        error: error.response?.data?.message || 'Error marking all notifications as read'
       }
     }
   }

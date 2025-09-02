@@ -81,7 +81,7 @@ const taskStats = computed(() => ({
       }
     // eslint-disable-next-line no-unused-vars
     } catch (err) {
-      error.value = 'Une erreur inattendue s\'est produite'
+      error.value = 'An unexpected error occurred'
       return { success: false, error: error.value }
     } finally {
       isLoading.value = false
@@ -104,7 +104,7 @@ const taskStats = computed(() => ({
       }
     // eslint-disable-next-line no-unused-vars
     } catch (err) {
-      error.value = 'Une erreur inattendue s\'est produite'
+      error.value = 'An unexpected error occurred'
       return { success: false, error: error.value }
     } finally {
       isLoading.value = false

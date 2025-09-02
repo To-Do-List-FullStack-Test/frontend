@@ -2,7 +2,7 @@
   <div class="modal-overlay" @click.self="$emit('close')">
     <div class="modal">
       <div class="modal-header">
-        <h3>{{ isEdit ? 'Modifier la tâche' : 'Nouvelle tâche' }}</h3>
+        <h3>{{ isEdit ? 'Edit Task' : 'New Task' }}</h3>
         <button class="close-btn" @click="$emit('close')">
           <i class="fas fa-times"></i>
         </button>
@@ -10,7 +10,7 @@
 
       <form @submit.prevent="onSubmit" class="modal-body">
         <div class="form-group">
-          <label for="title">Titre</label>
+          <label for="title">Title</label>
           <input id="title" v-model="localTask.title" type="text" class="input" required />
         </div>
 
@@ -30,10 +30,10 @@
           </div>
 
           <div class="form-group">
-            <label for="status">Statut</label>
+            <label for="status">Status</label>
             <select id="status" v-model="localTask.status" class="input">
-              <option value="pending">En attente</option>
-              <option value="completed">Terminée</option>
+              <option value="pending">Pending</option>
+              <option value="completed">Completed</option>
             </select>
           </div>
         </div>

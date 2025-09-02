@@ -26,7 +26,7 @@ class AuthService {
     } catch (error) {
       return {
         success: false,
-        error: error.response?.data?.message || 'Error in registration'
+        error: error.response?.data?.message || 'Error during registration'
       }
     }
   }
@@ -49,7 +49,7 @@ class AuthService {
     } catch (error) {
       return {
         success: false,
-        error: error.response?.data?.message || 'Error in Login'
+        error: error.response?.data?.message || 'Error during login'
       }
     }
   }
@@ -64,7 +64,7 @@ class AuthService {
 
       return {
         success: true,
-        message: 'Logout with success'
+        message: 'Successfully logged out'
       }
     // eslint-disable-next-line no-unused-vars
     } catch (error) {
@@ -73,7 +73,7 @@ class AuthService {
 
       return {
         success: true,
-        message: 'Logout with success'
+        message: 'Successfully logged out'
       }
     }
   }
@@ -89,7 +89,7 @@ class AuthService {
     } catch (error) {
       return {
         success: false,
-        error: error.response?.data?.message || 'Error retreiving user'
+        error: error.response?.data?.message || 'Error retrieving user profile'
       }
     }
   }

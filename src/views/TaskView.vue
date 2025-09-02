@@ -8,7 +8,7 @@
       </button>
     </div>
 
-    <!-- Filtres et recherche -->
+    <!-- Filters and search -->
     <div class="filters-section">
       <div class="search-box">
         <i class="fas fa-search"></i>

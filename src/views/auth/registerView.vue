@@ -9,14 +9,14 @@
       <form @submit.prevent="handleRegister" class="register-form">
         <!-- Nom complet -->
         <div class="form-group">
-          <label for="full_name" class="form-label">Nom complet</label>
+          <label for="full_name" class="form-label">Full Name</label>
           <input
             id="full_name"
             v-model="form.full_name"
             type="text"
             class="form-input"
             :class="{ 'error': errors.full_name }"
-            placeholder="Votre nom complet"
+            placeholder="Your Full NAME"
             required
           />
           <span v-if="errors.full_name" class="error-message">{{ errors.full_name }}</span>
@@ -31,7 +31,7 @@
             type="email"
             class="form-input"
             :class="{ 'error': errors.email }"
-            placeholder="votre@email.com"
+            placeholder="Your@email.com"
             required
           />
           <span v-if="errors.email" class="error-message">{{ errors.email }}</span>
@@ -39,7 +39,7 @@
 
         <!-- Numéro de téléphone -->
         <div class="form-group">
-          <label for="phone_number" class="form-label">Numéro de téléphone</label>
+          <label for="phone_number" class="form-label">phone number</label>
           <input
             id="phone_number"
             v-model="form.phone_number"
@@ -53,7 +53,7 @@
 
         <!-- Adresse -->
         <div class="form-group">
-          <label for="address" class="form-label">Adresse</label>
+          <label for="address" class="form-label">address</label>
           <textarea
             id="address"
             v-model="form.address"
@@ -67,7 +67,7 @@
 
         <!-- Image de profil -->
         <div class="form-group">
-          <label for="image" class="form-label">Image de profil</label>
+          <label for="image" class="form-label">Image</label>
           <div class="file-input-container">
             <input
               id="image"
@@ -87,7 +87,7 @@
 
         <!-- Mot de passe -->
         <div class="form-group">
-          <label for="password" class="form-label">Mot de passe</label>
+          <label for="password" class="form-label">password</label>
           <div class="password-input-container">
             <input
               id="password"
@@ -95,7 +95,7 @@
               :type="showPassword ? 'text' : 'password'"
               class="form-input"
               :class="{ 'error': errors.password }"
-              placeholder="Votre mot de passe"
+              placeholder="your password"
               required
             />
             <button
@@ -111,7 +111,7 @@
 
         <!-- Confirmation du mot de passe -->
         <div class="form-group">
-          <label for="password_confirmation" class="form-label">Confirmer le mot de passe</label>
+          <label for="password_confirmation" class="form-label">password confirmation</label>
           <input
             id="password_confirmation"
             v-model="form.password_confirmation"
@@ -144,9 +144,9 @@
         <!-- Lien vers la connexion -->
         <div class="register-footer">
           <p>
-            Déjà un compte ?
+            You have already an account ?
             <router-link to="/auth/login" class="link">
-              Se connecter
+             Sign in
             </router-link>
           </p>
         </div>

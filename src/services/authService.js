@@ -36,14 +36,15 @@ class AuthService {
     try {
       const response = await api.post('/auth/login', credentials)
 
-      if (response.data.token) {
-        localStorage.setItem('token', response.data.token)
-        localStorage.setItem('user', JSON.stringify(response.data.user))
+      //console.log("Debugging:",response)
+      if (response.data.data.token) {
+        localStorage.setItem('token', response.data.data.token)
+        localStorage.setItem('user', JSON.stringify(response.data.data.user))
       }
 
       return {
         success: true,
-        data: response.data
+        data: response.data.data
       }
     } catch (error) {
       return {

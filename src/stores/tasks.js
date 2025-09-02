@@ -51,7 +51,12 @@ export const useTaskStore = defineStore('tasks', () => {
     return filtered
   })
 
-
+const taskStats = computed(() => ({
+    total: tasks.value.length,
+    pending: pendingTasks.value.length,
+    completed: completedTasks.value.length,
+    highPriority: highPriorityTasks.value.length
+  }))
 
 
   async function fetchTasks(params = {}) {
@@ -60,7 +65,7 @@ export const useTaskStore = defineStore('tasks', () => {
 
     try {
       const result = await taskService.getTasks(params)
-
+      console.log("Data dyali:",result)
       if (result.success) {
         tasks.value = result.data.data || result.data
         pagination.value = {
@@ -272,6 +277,7 @@ export const useTaskStore = defineStore('tasks', () => {
     error,
     pagination,
     filters,
+    taskStats,
 
     // Getters
     pendingTasks,

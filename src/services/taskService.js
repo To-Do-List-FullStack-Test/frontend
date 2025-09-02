@@ -11,6 +11,7 @@ class TaskService {
         data: response.data.tasks
       }
     } catch (error) {
+      console.log("Data error mn Task Service",error)
       return {
         success: false,
         error: error.response?.data?.message || 'Error retreiving tasks'
@@ -36,6 +37,7 @@ class TaskService {
 
 
   async createTask(taskData) {
+
     try {
       const response = await api.post('/tasks', taskData)
       return {
@@ -44,6 +46,7 @@ class TaskService {
         message: response.data.message
       }
     } catch (error) {
+      console.log(error);
       return {
         success: false,
         error: error.response?.data?.message || 'Error creating a task'
@@ -101,7 +104,7 @@ class TaskService {
   }
 
 
-  
+
 }
 
 export default new TaskService()

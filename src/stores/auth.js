@@ -15,6 +15,7 @@ export const useAuthStore = defineStore('auth', () => {
 
 
   function initializeAuth() {
+    console.log("Init Auth ............")
     const storedToken = localStorage.getItem('token')
     const storedUser = localStorage.getItem('user')
 
@@ -31,7 +32,6 @@ export const useAuthStore = defineStore('auth', () => {
 
     try {
       const result = await authService.login(credentials)
-
       if (result.success) {
         token.value = result.data.token
         user.value = result.data.user

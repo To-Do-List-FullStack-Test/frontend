@@ -2,8 +2,8 @@
   <div class="register-page">
     <div class="register-container">
       <div class="register-header">
-        <h1 class="register-title">Inscription</h1>
-        <p class="register-subtitle">Créez votre compte Todo App</p>
+        <h1 class="register-title">Sign up</h1>
+        <p class="register-subtitle">Create your Acount Todo App</p>
       </div>
 
       <form @submit.prevent="handleRegister" class="register-form">
@@ -79,7 +79,7 @@
             />
             <label for="image" class="file-input-label">
               <i class="fas fa-upload"></i>
-              {{ selectedFile ? selectedFile.name : 'Choisir une image' }}
+              {{ selectedFile ? selectedFile.name : 'Chose an  image' }}
             </label>
           </div>
           <span v-if="errors.image" class="error-message">{{ errors.image }}</span>
@@ -138,7 +138,7 @@
         >
           <i v-if="authStore.isLoading" class="fas fa-spinner fa-spin"></i>
           <i v-else class="fas fa-user-plus"></i>
-          {{ authStore.isLoading ? 'Inscription...' : 'S\'inscrire' }}
+          {{ authStore.isLoading ? 'creating...' : 'Sinup' }}
         </button>
 
         <!-- Lien vers la connexion -->

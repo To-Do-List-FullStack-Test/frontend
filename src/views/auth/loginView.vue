@@ -24,7 +24,7 @@
 
         <!-- Mot de passe -->
         <div class="form-group">
-          <label for="password" class="form-label">Mot de passe</label>
+          <label for="password" class="form-label">Password</label>
           <div class="password-input-container">
             <input
               id="password"
@@ -60,7 +60,7 @@
         >
           <i v-if="authStore.isLoading" class="fas fa-spinner fa-spin"></i>
           <i v-else class="fas fa-sign-in-alt"></i>
-          {{ authStore.isLoading ? 'Connexion...' : 'Se connecter' }}
+          {{ authStore.isLoading ? 'login...' : 'Sign in' }}
         </button>
 
         <!-- Lien vers l'inscription -->
@@ -133,7 +133,6 @@ async function handleLogin() {
   }
 
   const result = await authStore.login(form)
-
   if (result.success) {
     const redirectPath = route.query.redirect || '/'
     router.push(redirectPath)

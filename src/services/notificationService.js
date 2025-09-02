@@ -29,7 +29,7 @@ class NotificationService {
     } catch (error) {
       return {
         success: false,
-        error: error.response?.data?.message || 'Erreur lors de la récupération du compteur'
+        error: error.response?.data?.message || 'Error retreivng couters'
       }
     }
   }
@@ -50,7 +50,7 @@ class NotificationService {
     }
   }
 
- 
+
   async markAllAsRead() {
     try {
       const response = await api.post('/notifications/mark-all-read')
@@ -61,7 +61,7 @@ class NotificationService {
     } catch (error) {
       return {
         success: false,
-        error: error.response?.data?.message || 'Erreur lors du marquage de toutes les notifications'
+        error: error.response?.data?.message || 'Error mark all notifications'
       }
     }
   }

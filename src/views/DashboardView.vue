@@ -1,8 +1,8 @@
 <template>
   <div class="dashboard">
     <div class="dashboard-header">
-      <h1 class="dashboard-title">Tableau de bord</h1>
-      <p class="dashboard-subtitle">Bienvenue, {{ authStore.userFullName }} !</p>
+      <h1 class="dashboard-title">Dashboard</h1>
+      <p class="dashboard-subtitle">Welcome, {{ authStore.userFullName }} !</p>
     </div>
 
 
@@ -13,7 +13,7 @@
         </div>
         <div class="stat-content">
           <h3 class="stat-number">{{ taskStats.pending }}</h3>
-          <p class="stat-label">En attente</p>
+          <p class="stat-label">Pending</p>
         </div>
       </div>
 
@@ -23,7 +23,7 @@
         </div>
         <div class="stat-content">
           <h3 class="stat-number">{{ taskStats.completed }}</h3>
-          <p class="stat-label">Terminées</p>
+          <p class="stat-label">Completed</p>
         </div>
       </div>
 
@@ -43,14 +43,14 @@
       <div class="section-header">
         <h2 class="section-title">Lates Task</h2>
         <router-link to="/tasks" class="view-all-link">
-          Voir toutes les tâches
+          See all tasks
           <i class="fas fa-arrow-right"></i>
         </router-link>
       </div>
 
       <div v-if="taskStore.isLoading" class="loading-state">
         <i class="fas fa-spinner fa-spin"></i>
-        <p>Chargement des tâches...</p>
+        <p>Loading tasks...</p>
       </div>
 
       <div v-else-if="recentTasks.length === 0" class="empty-state">

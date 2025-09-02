@@ -292,7 +292,7 @@ async function handleUpdateProfile() {
   const result = await authStore.updateProfile(profileData)
 
   if (result.success) {
-    successMessage.value = 'Profil mis à jour avec succès'
+    successMessage.value = 'Profile updated succefully'
 
     form.current_password = ''
     form.new_password = ''
@@ -313,13 +313,11 @@ function triggerFileInput() {
 function handleImageChange(event) {
   const file = event.target.files[0]
   if (file) {
-    // Vérifier la taille du fichier (max 5MB)
     if (file.size > 5 * 1024 * 1024) {
       alert('size file: 5MB')
       return
     }
 
-    // Vérifier le type de fichier
     if (!file.type.startsWith('image/')) {
       alert('image must be a file')
       return
